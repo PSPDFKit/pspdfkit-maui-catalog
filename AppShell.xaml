@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Shell
+    x:Class="PSPDFKit.Maui.Catalog.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+    xmlns:appModel="clr-namespace:Microsoft.Maui.ApplicationModel;assembly=Microsoft.Maui.Essentials"
+    Title="PSPDFKit for MAUI Catalog" TabBarIsVisible="False" ItemTemplate="{StaticResource PSPDFKitShellItemTemplate}"
+    FlyoutBackdrop="#55111111">
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout HorizontalOptions="Start" Spacing="1" Padding="10">
+            <HorizontalStackLayout.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="TextColor" Value="DimGrey" />
+                    <Setter Property="FontSize" Value="10" />
+                    <Setter Property="HorizontalTextAlignment" Value="Center" />
+                </Style>
+            </HorizontalStackLayout.Resources>
+            <Label Text="PSPDFKit for MAUI" FontAttributes="Bold" />
+            <Label x:Name="AppVersion" />
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
+    <Shell.Style>
+        <Style TargetType="Shell">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup>
+                        <VisualState x:Name="SmallWindow">
+                            <VisualState.StateTriggers>
+                                <AdaptiveTrigger MinWindowWidth="0" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="FlyoutBehavior" Value="Flyout" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="LargeWindow">
+                            <VisualState.StateTriggers>
+                                <AdaptiveTrigger MinWindowWidth="1000" />
+                            </VisualState.StateTriggers>
+                            <VisualState.Setters>
+                                <Setter Property="FlyoutBehavior" Value="Locked" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </Shell.Style>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <FlyoutItem.Style>
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}"/>
+            </Style>
+        </FlyoutItem.Style>
+        <ShellContent
+            Title="Playground"
+            Icon="playground.png"
+            ContentTemplate="{DataTemplate views:Playground}"
+            Route="Playground"/>
+        <ShellContent 
+            Title="Load Document"
+            Icon="load_document.png"
+            ContentTemplate="{DataTemplate views:LoadDocument}"
+            Route="LoadDocument"/>
+        <ShellContent 
+            Title="Export Document"
+            Icon="export_document.png"
+            ContentTemplate="{DataTemplate views:ExportDocument}"
+            Route="ExportDocument"/>
+        <ShellContent 
+            Title="Advance API Access"
+            Icon="advance_api.png"
+            ContentTemplate="{DataTemplate views:AdvanceAPIAccess}"
+            Route="AdvanceAPIAccess"/>
+    </FlyoutItem>
+
+    <ShellContent
+        Icon="about.png"
+        Title="About"
+        ContentTemplate="{DataTemplate views:AboutPage}"
+        Route="About" />
+
+</Shell>
+    

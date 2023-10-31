@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSPDFKit.Maui.Catalog.Examples.Views.AboutPage"
+             xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+             xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+             x:DataType="viewModels:AboutPageViewModel"
+             Loaded="OnAboutPageLoaded">
+    <Shell.TitleView>
+        <Grid>
+            <Label Text="About" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" 
+                   FontSize="18" FontAttributes="Bold"/>
+        </Grid>
+    </Shell.TitleView>
+    <ScrollView>
+        <Border BackgroundColor="White" StrokeShape="RoundRectangle 8" MaximumWidthRequest="648"
+                HorizontalOptions="{OnIdiom 'Center', Phone='Fill'}" MinimumHeightRequest="{OnIdiom 700, Phone=''}"
+                Stroke="Transparent" Margin="10,64">
+            <Border.Shadow>
+                <Shadow Brush="Black" Offset="20,20" Radius="40" Opacity="0.2" />
+            </Border.Shadow>
+            <Grid RowDefinitions="64, Auto, *" Padding="16,0">
+                <Label Text="License" FontSize="18" VerticalOptions="Center" FontAttributes="Bold" Padding="4"/>
+
+                <Button Style="{StaticResource SecondaryButton}" Text="Changelog" HorizontalOptions="End"
+                        VerticalOptions="Center" Command="{Binding OpenChangelog, Mode=OneTime}"
+                        Padding="12, 0"/>
+
+                <customControls:HorizontalSeparator VerticalOptions="End" />
+
+                <Label Grid.Row="2" Margin="0,16" Padding="4,0" Text="{Binding License, Mode=OneWay}" FontSize="14"/>
+            </Grid>
+        </Border>
+    </ScrollView>
+</ContentPage>
