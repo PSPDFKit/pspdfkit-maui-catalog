@@ -23,8 +23,8 @@ To know about the latest changes in our PSPDFKit for MAUI SDK, checkout [our cha
 
 ## License
 
-For buying contact our [sales team](https://pspdfkit.com/sales) and if you already have one, add the license to your MAUI project [checkout our website](https://pspdfkit.com/guides/maui/troubleshooting/license/adding-license-key).
+For buying a license, contact our [sales team](https://pspdfkit.com/sales) and if you already have one, to add the license to your MAUI project checkout our guide on ["Adding License Key"](https://pspdfkit.com/guides/maui/troubleshooting/license/adding-license-key).
 
 ## Support
 
-Having trouble? Have queries? Contact our [support](https://pspdfkit.com/support/request/). We're here to support you every step of the way!
+Have queries? Contact our [support](https://pspdfkit.com/support/request/). We're here to support you every step of the way!
