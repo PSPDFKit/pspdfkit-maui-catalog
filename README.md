@@ -1,5 +1,5 @@
 # PSPDFKit for MAUI - Catalog
-![MAUI Intro](screenshots/maui-intro.png)
+![MAUI Intro](readme-assets/maui-intro.png)
 
 This is a example Catalog app for [PSPDFKit for MAUI](http://pspdfkit.com//guides/maui/)
 
