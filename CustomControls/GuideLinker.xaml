@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PSPDFKit.Maui.Catalog.CustomControls.GuideLinker">
+
+    <Border BackgroundColor="White" StrokeShape="RoundRectangle 20" Padding="0,8,0,8" 
+            Margin="{OnIdiom '28, 24', Phone='28, 16'}">
+        <Border.Shadow>
+            <Shadow Brush="Black" Offset="5,5" Radius="5" Opacity="0.2" />
+        </Border.Shadow>
+        <HorizontalStackLayout>
+            <ImageButton Source="guides.png" HeightRequest="20" BackgroundColor="Transparent"
+                         WidthRequest="{OnIdiom 20, Phone=24}" MinimumHeightRequest="20" Padding="0" 
+                         Margin ="{OnPlatform '-4, 0', Android='6,0'}" Clicked="OnOpenGuideRequested"/>
+
+            <HorizontalStackLayout x:Name="LinkerText">
+                <HorizontalStackLayout.Style>
+                    <Style TargetType="HorizontalStackLayout">
+                        <Setter Property="VisualStateManager.VisualStateGroups">
+                            <VisualStateGroupList>
+                                <VisualStateGroup>
+                                    <VisualState x:Name="SmallWindow">
+                                        <VisualState.StateTriggers>
+                                            <AdaptiveTrigger MinWindowWidth="0" />
+                                        </VisualState.StateTriggers>
+                                        <VisualState.Setters>
+                                            <Setter Property="IsVisible" Value="false" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="LargeWindow">
+                                        <VisualState.StateTriggers>
+                                            <AdaptiveTrigger MinWindowWidth="1000" />
+                                        </VisualState.StateTriggers>
+                                        <VisualState.Setters>
+                                            <Setter Property="IsVisible" Value="true" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </Setter>
+                    </Style>
+                </HorizontalStackLayout.Style>
+                <Label Text="Read more in" FontSize="14" VerticalOptions="Center"/>
+                <Button Text="Guides" FontSize="14" Margin="2,0,12,0" TextColor="#4537DE" VerticalOptions="Center"
+                    BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" MinimumHeightRequest="12"
+                    Clicked="OnOpenGuideRequested"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+    </Border>
+
+</ContentView>

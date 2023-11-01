@@ -1,0 +1,40 @@
+﻿<views:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Popups.ViewModels"
+             xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+             x:Class="PSPDFKit.Maui.Catalog.Popups.ExportOptionsPopup"
+             x:DataType="viewModels:ExportOptionsPopupViewModel" Color="Transparent"
+             Size="{OnPlatform WinUI='320,200', Android='320,220', iOS='360, 260', MacCatalyst='360,260'}" >
+    <Frame CornerRadius="4" Background="{OnPlatform White, MacCatalyst='#fafafa', iOS='#ffffff'}">
+        <VerticalStackLayout>
+            <Label Text="Export Options" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start"/>
+
+            <customControls:HorizontalSeparator VerticalOptions="Start" 
+                                                Margin="{OnPlatform WinUI='0,12', Android='0,12', iOS='0,20,0,10', MacCatalyst='0,20,0,10'}" />
+
+            <Grid HorizontalOptions="Fill" ColumnDefinitions="*,*" RowDefinitions="*,*,*,*" ColumnSpacing="8">
+                <Label Text="Incrementally" VerticalOptions="Center"/>
+                <Border Grid.Column="1" Style="{StaticResource SwitchBorder}">
+                    <Switch IsToggled="{Binding ExportIncrementally, Mode=TwoWay}" />
+                </Border>
+                
+                <Label Text="Flatten" VerticalOptions="Center" Grid.Row="1"/>
+                <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource SwitchBorder}">
+                    <Switch IsToggled="{Binding Flatten, Mode=TwoWay}" />
+                </Border>
+
+                <Label Text="Exclude Annotations" VerticalOptions="Center" Grid.Row="2"/>
+                <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource SwitchBorder}">
+                    <Switch IsToggled="{Binding ExcludeAnnotations, Mode=TwoWay}" />
+                </Border>
+         
+
+                <Label Text="Export for Printing" VerticalOptions="Center" Grid.Row="3"/>
+                <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource SwitchBorder}">
+                    <Switch  IsToggled="{Binding ExportForPrinting, Mode=TwoWay}" />
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </Frame>
+</views:Popup>
