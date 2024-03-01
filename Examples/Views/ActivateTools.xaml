@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       x:DataType="viewModels:ActivateToolsViewModel"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.ActivateTools">
+    <Grid RowDefinitions="{OnIdiom '*, auto', Phone='*, auto'}">
+        <pspdfkit:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
+                      InteractionMode="{Binding SelectedInteractionMode}"
+                      SidebarMode="{Binding SelectedSidebarMode}"
+                      License="{OnPlatform 
+                    Android={StaticResource AndroidLicenseKey},
+                    iOS={StaticResource iOSLicenseKey},
+                    MacCatalyst={StaticResource MacCatalystLicenseKey},
+                    WinUI={StaticResource WindowsLicenseKey}}" />
+
+        <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End"
+                                GuideUrl="{Binding GuideUrl}" />
+
+        <BoxView Grid.Row="1" VerticalOptions="Start"
+             HeightRequest="1" Color="#c8c8c8">
+            <BoxView.Shadow>
+                <Shadow Brush="Black" Radius="5" Opacity="0.5" />
+            </BoxView.Shadow>
+        </BoxView>
+
+        <Frame Grid.Row="1" CornerRadius="0"
+           Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+
+        <HorizontalStackLayout Grid.Row="1">
+            <VerticalStackLayout>
+                <Label Text="Interaction Mode" FontAttributes="Bold"
+                   Margin="{OnIdiom '12, 12, 12, 0', Phone='8, 8, 8, 0'}" />
+                <Border Style="{StaticResource PickerBorder}"
+                    WidthRequest="{OnIdiom 180, Phone=''}" HorizontalOptions="Start">
+                    <Grid>
+                        <Picker x:Name="InteractionMode"
+                            WidthRequest="{OnIdiom 180, Phone=80}"
+                            ItemsSource="{Binding InteractionModes, Mode=OneWay}"
+                            SelectedItem="{Binding SelectedInteractionMode}" />
+                        <Image Style="{StaticResource PickerChevron}" />
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Sidebar Mode" FontAttributes="Bold"
+                   Margin="{OnIdiom '12, 12, 12, 0', Phone='8, 8, 8, 0'}" />
+                <Border Style="{StaticResource PickerBorder}"
+                    WidthRequest="{OnIdiom 180, Phone=''}" HorizontalOptions="Start">
+                    <Grid>
+                        <Picker x:Name="SidebarMode"
+                            WidthRequest="{OnIdiom 180, Phone=80}"
+                            ItemsSource="{Binding SidebarModes, Mode=OneWay}"
+                            SelectedItem="{Binding SelectedSidebarMode, Mode=TwoWay}" />
+                        <Image Style="{StaticResource PickerChevron}" />
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+
+            <Button Text="Reset" Command="{Binding ResetCommand, Mode=OneWay}"
+                Style="{StaticResource SecondaryButton}" Margin="{OnIdiom '12,36,12,8', Phone='12,30,12,8'}"
+                WidthRequest="{OnIdiom 120, Phone=80}" HeightRequest="{OnIdiom 16, Phone=28}"/>
+        </HorizontalStackLayout>
+    </Grid>
+</views:ExampleViewBase>

@@ -9,8 +9,8 @@
              Loaded="OnAboutPageLoaded">
     <Shell.TitleView>
         <Grid>
-            <Label Text="About" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" 
-                   FontSize="18" FontAttributes="Bold"/>
+            <Label Text="About" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"
+                   FontSize="18" FontAttributes="Bold" />
         </Grid>
     </Shell.TitleView>
     <ScrollView>
@@ -21,15 +21,15 @@
                 <Shadow Brush="Black" Offset="20,20" Radius="40" Opacity="0.2" />
             </Border.Shadow>
             <Grid RowDefinitions="64, Auto, *" Padding="16,0">
-                <Label Text="License" FontSize="18" VerticalOptions="Center" FontAttributes="Bold" Padding="4"/>
+                <Label Text="License" FontSize="18" VerticalOptions="Center" FontAttributes="Bold" Padding="4" />
 
                 <Button Style="{StaticResource SecondaryButton}" Text="Changelog" HorizontalOptions="End"
                         VerticalOptions="Center" Command="{Binding OpenChangelog, Mode=OneTime}"
-                        Padding="12, 0"/>
+                        Padding="12, 0" />
 
                 <customControls:HorizontalSeparator VerticalOptions="End" />
 
-                <Label Grid.Row="2" Margin="0,16" Padding="4,0" Text="{Binding License, Mode=OneWay}" FontSize="14"/>
+                <Label Grid.Row="2" Margin="0,16" Padding="4,0" Text="{Binding License, Mode=OneWay}" FontSize="14" />
             </Grid>
         </Border>
     </ScrollView>

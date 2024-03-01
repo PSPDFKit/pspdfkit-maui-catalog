@@ -1,13 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
-                 xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
-                 xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
-                 xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
-                 x:DataType="viewModels:ExportDocumentViewModel"
-                 x:Class="PSPDFKit.Maui.Catalog.Examples.Views.ExportDocument">
-    <Grid RowDefinitions="{OnIdiom '*, 72', Phone='*, 44, 44'}" 
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       x:DataType="viewModels:ExportDocumentViewModel"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.ExportDocument">
+    <Grid RowDefinitions="{OnIdiom '*, 72', Phone='*, 44, 44'}"
           ColumnDefinitions="{OnIdiom '200, auto, *, 200', Phone='*, auto'}">
         <sdk:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
                      License="{OnPlatform 
@@ -18,7 +19,7 @@
                      Grid.RowSpan="1" Grid.ColumnSpan="4" />
 
         <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}"
-                                        Grid.RowSpan="1" Grid.ColumnSpan="4" />
+                                    Grid.RowSpan="1" Grid.ColumnSpan="4" />
 
         <BoxView Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" VerticalOptions="Start"
                  HeightRequest="1" Color="#c8c8c8">
@@ -28,39 +29,39 @@
         </BoxView>
 
         <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent"/>
+               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
 
         <Border Grid.Row="1" Grid.ColumnSpan="1" Style="{StaticResource PickerBorder}">
             <Grid>
                 <Picker x:Name="DocumentSourcePicker"
                         WidthRequest="{OnIdiom 180, Phone=''}"
-                        ItemsSource="{Binding DocumentSources, Mode=OneWay}" 
+                        ItemsSource="{Binding DocumentSources, Mode=OneWay}"
                         ItemDisplayBinding="{Binding DocumentSource.Source}"
-                        SelectedItem="{Binding SelectedDestination, Mode=TwoWay}"/>
-                <Image Style="{StaticResource PickerChevron}"/>
+                        SelectedItem="{Binding SelectedDestination, Mode=TwoWay}" />
+                <Image Style="{StaticResource PickerChevron}" />
             </Grid>
         </Border>
 
-        <customControls:VerticalSeparator Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" 
-                                          IsVisible="{OnIdiom True, Phone=False}"/>
+        <customControls:VerticalSeparator Grid.Row="1" Grid.Column="1" HorizontalOptions="Start"
+                                          IsVisible="{OnIdiom True, Phone=False}" />
 
-        <Button Text="Export Options" Clicked="OnConfigureExportButtonClicked" 
+        <Button Text="Export Options" Clicked="OnConfigureExportButtonClicked"
                 Grid.Row="1" Grid.Column="{OnIdiom 1, Phone=4}" HorizontalOptions="Start"
                 Margin="{OnIdiom '12', Phone='8'}" Style="{StaticResource SecondaryButton}" />
 
-        <customControls:VerticalSeparator Grid.Row="3" Grid.Column="2" HorizontalOptions="Start" 
-                                          IsVisible="{OnIdiom True, Phone=False}"/>
-        
-        <Border Grid.Column="{OnIdiom 2, Phone=0}" Grid.Row="2" Grid.ColumnSpan="3" 
+        <customControls:VerticalSeparator Grid.Row="3" Grid.Column="2" HorizontalOptions="Start"
+                                          IsVisible="{OnIdiom True, Phone=False}" />
+
+        <Border Grid.Column="{OnIdiom 2, Phone=0}" Grid.Row="2" Grid.ColumnSpan="3"
                 Style="{StaticResource EntryBorder}">
             <Grid ColumnDefinitions="*, Auto">
                 <Entry IsReadOnly="{Binding SelectedDestination.DocumentSource.IsPathReadOnly, Mode=OneWay}"
                        Placeholder="{Binding SelectedDestination.DocumentSource.PlaceholderForPath, Mode=OneWay}"
                        Text="{Binding SelectedDestination.DocumentSource.DocumentPath}"
-                       ReturnCommand="{Binding ExportCommand, Mode=OneWay}"/>
+                       ReturnCommand="{Binding ExportCommand, Mode=OneWay}" />
 
                 <Button Text="Export" Command="{Binding ExportCommand, Mode=OneTime}" CornerRadius="0"
-                        Grid.Column="3" Grid.Row="2" Margin="{OnPlatform '-2', iOS='-2'}" 
+                        Grid.Column="3" Grid.Row="2" Margin="{OnPlatform '-2', iOS='-2'}"
                         WidthRequest="{OnIdiom 120, Phone=''}" Padding="{OnIdiom 0, Phone='14, 0'}" />
             </Grid>
         </Border>

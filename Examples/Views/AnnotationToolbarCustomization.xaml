@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       x:DataType="viewModels:AnnotationToolbarCustomizationViewModel"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.AnnotationToolbarCustomization">
+
+    <Grid RowDefinitions="{OnIdiom '*, auto, 72', Phone='*, auto, 44, 44'}"
+          ColumnDefinitions="{OnIdiom '*, *, *, *', Phone='*, *'}">
+        <pspdfkit:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
+                          Grid.ColumnSpan="{OnIdiom 4, Phone=2}"
+                          License="{OnPlatform 
+                            Android={StaticResource AndroidLicenseKey},
+                            iOS={StaticResource iOSLicenseKey},
+                            MacCatalyst={StaticResource MacCatalystLicenseKey},
+                            WinUI={StaticResource WindowsLicenseKey}}" />
+
+        <customControls:GuideLinker Grid.ColumnSpan="{OnIdiom 4, Phone=2}"
+                                    HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}" />
+
+        <BoxView Grid.Row="1" Grid.ColumnSpan="{OnIdiom 4, Phone=2}" VerticalOptions="Start"
+                 HeightRequest="1" Color="#c8c8c8">
+            <BoxView.Shadow>
+                <Shadow Brush="Black" Radius="5" Opacity="0.5" />
+            </BoxView.Shadow>
+        </BoxView>
+
+        <Frame Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3"
+               CornerRadius="0" Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+
+        <Label Text="Annotation Toolbar Items Operation" Grid.Row="1" Grid.ColumnSpan="3"
+               Margin="{OnIdiom '12, 12, 12, 0', Phone='8, 8, 8, 0'}" FontAttributes="Bold" />
+        <Button Text="Add" Command="{Binding AddItemsCommand, Mode=OneTime}"
+                Grid.Row="2" HorizontalOptions="FillAndExpand"
+                Margin="{OnIdiom '12', Phone='8'}" Style="{StaticResource SecondaryButton}" />
+        <Button Text="Remove" Command="{Binding RemoveItemsCommand, Mode=OneTime}"
+                Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand"
+                Margin="{OnIdiom '12', Phone='8'}" Style="{StaticResource SecondaryButton}" />
+        <Button Text="Update Icon" Command="{Binding UpdateIconCommand, Mode=OneTime}"
+                Grid.Row="{OnIdiom 2, Phone=3}" Grid.Column="{OnIdiom 2, Phone=0}" Grid.ColumnSpan="1"
+                HorizontalOptions="FillAndExpand" Margin="{OnIdiom '12', Phone='8'}"
+                Style="{StaticResource SecondaryButton}" />
+        <Button Text="Shuffle" Command="{Binding ShuffleItemsCommand, Mode=OneTime}"
+                Grid.Row="{OnIdiom 2, Phone=3}" Grid.Column="{OnIdiom 3, Phone=1}" Grid.ColumnSpan="1"
+                HorizontalOptions="FillAndExpand" Margin="{OnIdiom '12', Phone='8'}"
+                Style="{StaticResource SecondaryButton}" />
+
+    </Grid>
+</views:ExampleViewBase>

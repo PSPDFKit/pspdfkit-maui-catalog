@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.Annotations"
+                       xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views">
+    <Grid RowDefinitions="{OnIdiom '*, 72', Phone='*, auto, auto'}" ColumnDefinitions="{OnIdiom '*,*,*,*', Phone='*,*'}">
+        <sdk:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized" Grid.ColumnSpan="4"
+                     License="{OnPlatform 
+                        Android={StaticResource AndroidLicenseKey},
+                        iOS={StaticResource iOSLicenseKey},
+                        MacCatalyst={StaticResource MacCatalystLicenseKey},
+                        WinUI={StaticResource WindowsLicenseKey}}" />
+
+        <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}" 
+                                    Grid.ColumnSpan="4"/>
+
+        <BoxView Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" VerticalOptions="Start"
+                 HeightRequest="1" Color="#c8c8c8">
+            <BoxView.Shadow>
+                <Shadow Brush="Black" Radius="5" Opacity="0.5" />
+            </BoxView.Shadow>
+        </BoxView>
+
+        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
+               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+
+        <Button HeightRequest="{OnIdiom 16, Phone=28}" Grid.Row="1" Margin="{OnIdiom 8, Phone='8,8,8,0'}" Padding="0"
+                Command="{Binding SelectAnnotationsCommand, Mode=OneTime}">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding AreAnnotationsSelected}" Value="true">
+                    <Setter Property="Text">Deselect</Setter>
+                    <Setter Property="ToolTipProperties.Text">Deselects annotation with id = '295' and '291' if present and selected.</Setter>
+                </DataTrigger>
+                <DataTrigger TargetType="Button" Binding="{Binding AreAnnotationsSelected}" Value="false">
+                    <Setter Property="Text">Select</Setter>
+                    <Setter Property="ToolTipProperties.Text">Selects annotation with id = '295' and '291' if present.</Setter>
+                </DataTrigger>
+            </Button.Triggers>
+            <Button.Style>
+                <Style TargetType="Button">
+
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Text="Create" HeightRequest="{OnIdiom 16, Phone=28}"
+                Grid.Column="1" Grid.Row="1" Margin="{OnIdiom 8, Phone='8,8,8,0'}" Padding="0"
+                Command="{Binding CreateAnnotationCommand, Mode=OneTime}"
+                ToolTipProperties.Text="Creates a new line at top left corner of first page.">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding IsAnnotationCreated}" Value="true">
+                    <Setter Property="Text">Delete</Setter>
+                    <Setter Property="ToolTipProperties.Text">Deletes line at top left corner of first page if present.</Setter>
+                </DataTrigger>
+                <DataTrigger TargetType="Button" Binding="{Binding IsAnnotationCreated}" Value="false">
+                    <Setter Property="Text">Create</Setter>
+                    <Setter Property="ToolTipProperties.Text">Creates a new line at top left corner of first page.</Setter>
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+
+
+        <Button Text="Update" HeightRequest="{OnIdiom 16, Phone=28}"
+                Command="{Binding UpdateAnnotationCommand, Mode=OneTime}"  Padding="0"
+                Grid.Column="{OnIdiom 2, Phone=0}" Grid.Row="{OnIdiom 1, Phone=2}" Margin="8"
+                ToolTipProperties.Text="Toggles visibility of 'GET IN TOUCH' button on first page." />
+
+        <Button Text="Reset Example"
+                Grid.Column="{OnIdiom 3, Phone=1}" Grid.Row="{OnIdiom 1, Phone=2}" Margin="8"
+                HeightRequest="{OnIdiom 16, Phone=28}" Padding="0"
+                Command="{Binding ResetExampleCommand, Mode=OneTime}"
+                Style="{StaticResource SecondaryButton}" />
+    </Grid>
+</views:ExampleViewBase>
