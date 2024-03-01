@@ -1,13 +1,17 @@
-﻿using System.Reflection;
+﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+// 
+// THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
+// AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
+// UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS SUBJECT TO CIVIL AND CRIMINAL PENALTIES.
+// This notice may not be removed from this file.
 
-namespace PSPDFKit.Maui.Catalog
+namespace PSPDFKit.Maui.Catalog;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
+    public AppShell()
     {
-        public AppShell()
-        {
-            InitializeComponent();
-            AppVersion.Text = Assembly.GetAssembly(typeof(PSPDFKit.Sdk.PDFView)).GetName().Version.ToString(2);
-        }
+        InitializeComponent();
+        AppVersion.Text = AppInfo.Version.ToString(2);
     }
 }
