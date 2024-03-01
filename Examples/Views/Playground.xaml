@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PSPDFKit.Maui.Catalog.Examples.Views.Playground"
-             x:DataType="viewModels:PlaygroundViewModel"
-             xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
-             xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
-             xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
-             xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views">
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.Playground"
+                       x:DataType="viewModels:PlaygroundViewModel"
+                       xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views">
     <Grid>
         <pspdfkit:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
-                      License="{OnPlatform 
+                          License="{OnPlatform 
                         Android={StaticResource AndroidLicenseKey},
                         iOS={StaticResource iOSLicenseKey},
                         MacCatalyst={StaticResource MacCatalystLicenseKey},

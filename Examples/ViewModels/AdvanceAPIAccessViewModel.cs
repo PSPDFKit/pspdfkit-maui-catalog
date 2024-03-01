@@ -1,37 +1,44 @@
-﻿using PSPDFKit.Api;
+﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+// 
+// THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
+// AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
+// UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS SUBJECT TO CIVIL AND CRIMINAL PENALTIES.
+// This notice may not be removed from this file.
 
-namespace PSPDFKit.Maui.Catalog.Examples.ViewModels
+using PSPDFKit.Api;
+
+namespace PSPDFKit.Maui.Catalog.Examples.ViewModels;
+
+public class AdvanceAPIAccessViewModel : ExampleViewModelBase
 {
-    public class AdvanceAPIAccessViewModel : ExampleViewModelBase
+    private IDocument _document;
+
+    public AdvanceAPIAccessViewModel() : base("https://pspdfkit.com/guides/maui/advanced-access-apis/")
     {
-        private IDocument _document;
+    }
 
-        public AdvanceAPIAccessViewModel() : base("https://pspdfkit.com/guides/maui/advanced-access-apis/")
+    public async void LoadDemoDocument()
+    {
+        try
         {
+            _document = await PSPDFKitController.LoadDocumentFromAssetsAsync(
+                DemoFile, PSPDFKitController.CreateViewerConfiguration());
         }
-
-        public async void LoadDemoDocument()
+        catch (Exception ex)
         {
-            try
-            {
-                _document = await PSPDFKitController.LoadDocumentFromAssetsAsync(DemoFile);
-            }
-            catch (Exception ex)
-            {
-                RaiseExceptionThrownEvent("Loading document failed", ex);
-            }
+            RaiseExceptionThrownEvent("Loading document failed", ex);
         }
+    }
 
-        public async void RemoveExportDocumentButton()
+    public async void RemoveExportDocumentButton()
+    {
+        try
         {
-            try
-            {
-                await _document.ExecuteJavaScriptFunctionAsync("removeExportButton", new object[] { });
-            }
-            catch (Exception ex)
-            {
-                RaiseExceptionThrownEvent("Remove export document button failed", ex);
-            }
+            await _document.ExecuteJavaScriptFunctionAsync("removeExportButton", new object[] { });
+        }
+        catch (Exception ex)
+        {
+            RaiseExceptionThrownEvent("Remove export document button failed", ex);
         }
     }
 }
