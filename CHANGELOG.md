@@ -1,3 +1,5 @@
+## Newest Release
+
 ### 1.1.0 - 01 Mar 2024
 
 _See the [announcement post](https://pspdfkit.com/blog/2024/pspdfkit-maui-1-1-annotations)._
@@ -14,6 +16,8 @@ _See the [announcement post](https://pspdfkit.com/blog/2024/pspdfkit-maui-1-1-an
 * Adds interaction mode and sidebar mode. (J#DOTNET-73)
 * Adds support for visibility and placement of the toolbar. (J#DOTNET-72)
 * Fixes clipping of toolbar after selecting certain tools. (J#DOTNET-99)
+
+## Previous Releases
 
 ### 1.0.0 – 31 Oct 2023
 
