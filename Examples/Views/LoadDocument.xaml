@@ -1,13 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
-                 xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
-                 xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
-                 xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
-                 x:DataType="viewModels:LoadDocumentViewModel"
-                 x:Class="PSPDFKit.Maui.Catalog.Examples.Views.LoadDocument">
-    <Grid RowDefinitions="{OnIdiom '*, 72', Phone='*, 44, 44'}" 
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       x:DataType="viewModels:LoadDocumentViewModel"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.LoadDocument">
+    <Grid RowDefinitions="{OnIdiom '*, 72', Phone='*, 44, 44'}"
           ColumnDefinitions="{OnIdiom '200, auto, *, 200', Phone='*, auto'}">
         <pspdfkit:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
                           License="{OnPlatform 
@@ -15,10 +16,10 @@
                             iOS={StaticResource iOSLicenseKey},
                             MacCatalyst={StaticResource MacCatalystLicenseKey},
                             WinUI={StaticResource WindowsLicenseKey}}"
-                          Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                          Grid.RowSpan="1" Grid.ColumnSpan="4" />
 
         <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}"
-                                        Grid.RowSpan="1" Grid.ColumnSpan="4" />
+                                    Grid.RowSpan="1" Grid.ColumnSpan="4" />
 
         <BoxView Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" VerticalOptions="Start"
                  HeightRequest="1" Color="#c8c8c8">
@@ -34,27 +35,27 @@
             <Grid>
                 <Picker x:Name="DocumentSourcePicker"
                         WidthRequest="{OnIdiom 180, Phone=''}"
-                        ItemsSource="{Binding DocumentSources, Mode=OneWay}" 
-                        ItemDisplayBinding="{Binding DocumentSource.Source}" 
-                        SelectedItem="{Binding SelectedDocumentSource, Mode=TwoWay}"/>
-                <Image Style="{StaticResource PickerChevron}"/>
+                        ItemsSource="{Binding DocumentSources, Mode=OneWay}"
+                        ItemDisplayBinding="{Binding DocumentSource.Source}"
+                        SelectedItem="{Binding SelectedDocumentSource, Mode=TwoWay}" />
+                <Image Style="{StaticResource PickerChevron}" />
             </Grid>
         </Border>
 
-        <customControls:VerticalSeparator Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" 
-                                          IsVisible="{OnIdiom True, Phone=False}"/>
+        <customControls:VerticalSeparator Grid.Row="1" Grid.Column="1" HorizontalOptions="Start"
+                                          IsVisible="{OnIdiom True, Phone=False}" />
 
-        <Border Grid.Column="{OnIdiom 2, Phone=0}" Grid.Row="2" Grid.ColumnSpan="3" 
+        <Border Grid.Column="{OnIdiom 2, Phone=0}" Grid.Row="2" Grid.ColumnSpan="3"
                 Style="{StaticResource EntryBorder}">
             <Grid ColumnDefinitions="*, Auto">
                 <Entry IsReadOnly="{Binding SelectedDocumentSource.DocumentSource.IsPathReadOnly, Mode=OneWay}"
-                   Placeholder="{Binding SelectedDocumentSource.DocumentSource.PlaceholderForPath, Mode=OneWay}"
-                   Text="{Binding SelectedDocumentSource.DocumentSource.DocumentPath}"
-                   ReturnCommand="{Binding LoadCommand, Mode=OneWay}" />
+                       Placeholder="{Binding SelectedDocumentSource.DocumentSource.PlaceholderForPath, Mode=OneWay}"
+                       Text="{Binding SelectedDocumentSource.DocumentSource.DocumentPath}"
+                       ReturnCommand="{Binding LoadCommand, Mode=OneWay}" />
 
                 <Button Text="Load" Command="{Binding LoadCommand, Mode=OneTime}" CornerRadius="0"
-                        Padding="{OnIdiom 0, Phone='14, 0'}" Margin="{OnIdiom '-2', Phone='-2'}" 
-                        WidthRequest="{OnIdiom 120, Phone=''}" HorizontalOptions="End"/>
+                        Padding="{OnIdiom 0, Phone='14, 0'}" Margin="{OnIdiom '-2', Phone='-2'}"
+                        WidthRequest="{OnIdiom 120, Phone=''}" HorizontalOptions="End" />
             </Grid>
         </Border>
     </Grid>

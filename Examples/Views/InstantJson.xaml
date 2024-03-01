@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.InstantJson"
+                       xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views">
+    <Grid RowDefinitions="{OnIdiom '*, 72', Phone='*, auto, auto'}" ColumnDefinitions="{OnIdiom 'auto, *', Phone='*'}">
+        <sdk:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
+                     Grid.ColumnSpan="2"
+                     License="{OnPlatform 
+                        Android={StaticResource AndroidLicenseKey},
+                        iOS={StaticResource iOSLicenseKey},
+                        MacCatalyst={StaticResource MacCatalystLicenseKey},
+                        WinUI={StaticResource WindowsLicenseKey}}" />
+
+        <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}"
+                                    Grid.Column="1" />
+
+        <BoxView Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="{OnIdiom '2', Phone='1'}"
+                 VerticalOptions="Start" HeightRequest="1" Color="#c8c8c8">
+            <BoxView.Shadow>
+                <Shadow Brush="Black" Radius="5" Opacity="0.5" />
+            </BoxView.Shadow>
+        </BoxView>
+
+        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="{OnIdiom '2', Phone='1'}"
+               CornerRadius="0" Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+
+        <Button Text="Export and Reset" Grid.Row="1" Margin="8"
+                HeightRequest="48"
+                Command="{Binding ExportInstantJsonCommand, Mode=OneTime}" />
+
+        <Border Grid.Column="{OnIdiom 1, Phone=0}" Grid.Row="{OnIdiom '1', Phone='2'}"
+                Style="{StaticResource EntryBorder}">
+            <Grid ColumnDefinitions="*, Auto">
+                <Entry Placeholder="Paste instant json here."
+                       Text="{Binding InstantJson}" Grid.Row="0"
+                       ReturnCommand="{Binding ImportInstantJsonCommand, Mode=OneWay}" />
+
+                <Button Text="Import" Command="{Binding ImportInstantJsonCommand, Mode=OneTime}" CornerRadius="0"
+                        Padding="{OnIdiom 0, Phone='14, 0'}" Margin="{OnIdiom '-2', Phone='-2'}"
+                        WidthRequest="{OnIdiom 120, Phone=''}" HorizontalOptions="End" />
+            </Grid>
+        </Border>
+    </Grid>
+</views:ExampleViewBase>

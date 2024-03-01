@@ -5,7 +5,6 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
-    xmlns:appModel="clr-namespace:Microsoft.Maui.ApplicationModel;assembly=Microsoft.Maui.Essentials"
     Title="PSPDFKit for MAUI Catalog" TabBarIsVisible="False" ItemTemplate="{StaticResource PSPDFKitShellItemTemplate}"
     FlyoutBackdrop="#55111111">
     <Shell.FlyoutFooter>
@@ -51,29 +50,86 @@
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <FlyoutItem.Style>
             <Style TargetType="ShellContent">
-                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}"/>
+                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}" />
             </Style>
         </FlyoutItem.Style>
         <ShellContent
             Title="Playground"
             Icon="playground.png"
             ContentTemplate="{DataTemplate views:Playground}"
-            Route="Playground"/>
-        <ShellContent 
+            Route="Playground" />
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <FlyoutItem.Style>
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}" />
+            </Style>
+        </FlyoutItem.Style>
+        <ShellContent
+            Title="Annotations"
+            Icon="annotations.png"
+            ContentTemplate="{DataTemplate views:Annotations}"
+            Route="Annotations" />
+        <ShellContent
+            Title="Instant JSON"
+            Icon="json.png"
+            ContentTemplate="{DataTemplate views:InstantJson}"
+            Route="InstantJson" />
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <FlyoutItem.Style>
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}" />
+            </Style>
+        </FlyoutItem.Style>
+        <ShellContent
+            Title="Main Toolbar Customization"
+            Icon="main_toolbar.png"
+            ContentTemplate="{DataTemplate views:MainToolbarCustomization}"
+            Route="MainToolbarCustomization" />
+        <ShellContent
+            Title="Annotation Toolbar Customization"
+            Icon="annotation_toolbar.png"
+            ContentTemplate="{DataTemplate views:AnnotationToolbarCustomization}"
+            Route="AnnotationToolbarCustomization" />
+        <ShellContent
+            Title="Activate/Deactivate Tools"
+            Icon="tools.png"
+            ContentTemplate="{DataTemplate views:ActivateTools}"
+            Route="ActivateTools" />
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <FlyoutItem.Style>
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}" />
+            </Style>
+        </FlyoutItem.Style>
+        <ShellContent
             Title="Load Document"
             Icon="load_document.png"
             ContentTemplate="{DataTemplate views:LoadDocument}"
-            Route="LoadDocument"/>
-        <ShellContent 
+            Route="LoadDocument" />
+        <ShellContent
             Title="Export Document"
             Icon="export_document.png"
             ContentTemplate="{DataTemplate views:ExportDocument}"
-            Route="ExportDocument"/>
-        <ShellContent 
+            Route="ExportDocument" />
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <FlyoutItem.Style>
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.NavBarIsVisible" Value="{OnIdiom false, Phone=true}" />
+            </Style>
+        </FlyoutItem.Style>
+        <ShellContent
             Title="Advance API Access"
             Icon="advance_api.png"
             ContentTemplate="{DataTemplate views:AdvanceAPIAccess}"
-            Route="AdvanceAPIAccess"/>
+            Route="AdvanceAPIAccess" />
     </FlyoutItem>
 
     <ShellContent
@@ -83,4 +139,3 @@
         Route="About" />
 
 </Shell>
-    

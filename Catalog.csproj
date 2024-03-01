@@ -10,6 +10,8 @@
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
     <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12.0</LangVersion>
+    <Version>1.1.0</Version>
 
     <!-- Display name -->
 		<ApplicationTitle>PSPDFKit for MAUI Catalog</ApplicationTitle>
@@ -19,15 +21,13 @@
     <ApplicationIdGuid>2b60b8d4-07fa-4cae-a32f-d93a47958a32</ApplicationIdGuid>
 
     <!-- Versions -->
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-    <ApplicationVersion>1</ApplicationVersion>
-
+    <ApplicationDisplayVersion>1.1.0</ApplicationDisplayVersion>
+    
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
     <Configurations>Debug;Release</Configurations>
     <PackageIcon>logo.png</PackageIcon>
   	<RestoreSources>https://api.nuget.org/v3/index.json;nuget/</RestoreSources>
@@ -54,14 +54,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <MauiCss Remove="Resources\Raw\Assets\advanceApp.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\Images\about.svg" />
+    <None Remove="Resources\Images\annotations.svg" />
+    <None Remove="Resources\Images\annotation_toolbar.png" />
+    <None Remove="Resources\Images\bin.png" />
     <None Remove="Resources\Images\chevron.svg" />
     <None Remove="Resources\Images\export_document.svg" />
+    <None Remove="Resources\Images\ink.png" />
+    <None Remove="Resources\Images\json.svg" />
     <None Remove="Resources\Images\load_document.svg" />
+    <None Remove="Resources\Images\main_toolbar.png" />
     <None Remove="Resources\Images\playground.svg" />
     <None Remove="Resources\Images\settings.svg" />
+    <None Remove="Resources\Images\tools.svg" />
     <None Remove="Resources\Raw\advanceAccess.js" />
     <None Remove="Resources\Raw\Assets\blank.pdf" />
+    <None Remove="Resources\Raw\Assets\status_completed.svg" />
     <None Remove="Resources\Raw\License.txt" />
   </ItemGroup>
 
@@ -69,7 +81,10 @@
     <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
     <PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-    <PackageReference Include="PSPDFKit.MAUI.SDK" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PSPDFKit.MAUI.SDK" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -89,6 +104,12 @@
     <Compile Update="Examples\Views\AdvanceAPIAccess.xaml.cs">
       <DependentUpon>AdvanceAPIAccess.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Examples\Views\InstantJson.xaml.cs">
+      <DependentUpon>InstantJson.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Examples\Views\MainToolbarCustomization.xaml.cs">
+      <DependentUpon>MainToolbarCustomization.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Popups\ExportOptionsPopup.xaml.cs">
       <DependentUpon>ExportOptionsPopup.xaml</DependentUpon>
     </Compile>
@@ -107,13 +128,28 @@
     <MauiXaml Update="Examples\Views\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
+    <MauiXaml Update="Examples\Views\ActivateTools.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Examples\Views\AdvanceAPIAccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Examples\Views\InstantJson.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Examples\Views\Annotations.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Examples\Views\AnnotationToolbarCustomization.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Examples\Views\ExportDocument.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Examples\Views\LoadDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Examples\Views\MainToolbarCustomization.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Popups\ExportOptionsPopup.xaml">
@@ -123,6 +159,11 @@
 
   <ItemGroup>
     <Folder Include="Resources\AppIcon\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiImage Include="Resources\Raw\Assets\icons\thrash_can.png" />
+    <MauiImage Include="Resources\Raw\Assets\icons\ink.png" />
   </ItemGroup>
 
 </Project>

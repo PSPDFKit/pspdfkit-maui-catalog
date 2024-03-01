@@ -1,21 +1,22 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                 xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
-                 xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
-                 xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
-                 xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
-                 x:Class="PSPDFKit.Maui.Catalog.Examples.Views.AdvanceAPIAccess"
-                 x:DataType="viewModels:AdvanceAPIAccessViewModel"
-                 Title="AdvanceJavaScriptAccess">
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.AdvanceAPIAccess"
+                       x:DataType="viewModels:AdvanceAPIAccessViewModel">
     <Grid RowDefinitions="*, 72">
         <sdk:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
                      License="{OnPlatform 
                         Android={StaticResource AndroidLicenseKey},
                         iOS={StaticResource iOSLicenseKey},
                         MacCatalyst={StaticResource MacCatalystLicenseKey},
-                        WinUI={StaticResource WindowsLicenseKey}}" 
-                     AdvanceAccessScriptPath="advanceAccess.js"/>
+                        WinUI={StaticResource WindowsLicenseKey}}"
+                     AdvanceAccessScriptPath="advanceAccess.js"
+                     CustomCSSStylesheetPath="advanceApp.css" />
 
         <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}" />
 
@@ -27,9 +28,9 @@
         </BoxView>
 
         <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent"/>
+               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
 
         <Button Text="Remove Export Document Button" Grid.Row="1" HorizontalOptions="End"
-                Margin="8" Clicked="OnRemoveExportDocumentButtonClicked"/>
+                Margin="8" Clicked="OnRemoveExportDocumentButtonClicked" />
     </Grid>
 </views:ExampleViewBase>

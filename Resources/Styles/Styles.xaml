@@ -4,7 +4,6 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
     xmlns:views="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <!--PSPDFKit Shell-->
@@ -24,7 +23,7 @@
 
     <DataTemplate x:Key="PSPDFKitShellItemTemplate">
         <Grid HeightRequest="{OnPlatform 56, Android=50, WinUI=44}"
-          ColumnSpacing="{OnPlatform WinUI=12}" RowSpacing="{OnPlatform WinUI=0}">
+              ColumnSpacing="{OnPlatform WinUI=12}" RowSpacing="{OnPlatform WinUI=0}">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroupList>
                     <VisualStateGroup x:Name="CommonStates">
@@ -36,7 +35,8 @@
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
                                 <Setter Property="BackgroundColor" Value="{OnPlatform #f0f3f9, WinUI=Transparent}" />
-                                <Setter TargetName="SelectedIndicator" Property="IsVisible" Value="{OnPlatform true, WinUI=false}" />
+                                <Setter TargetName="SelectedIndicator" Property="IsVisible"
+                                        Value="{OnPlatform true, WinUI=false}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -46,20 +46,21 @@
                 <ColumnDefinition Width="{OnPlatform Auto, Android=54, iOS=50, MacCatalyst=50}" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <BoxView x:Name="SelectedIndicator" WidthRequest="4" Color="#4537DE" HorizontalOptions="Start" IsVisible="false" />
+            <BoxView x:Name="SelectedIndicator" WidthRequest="4" Color="#4537DE" HorizontalOptions="Start"
+                     IsVisible="false" />
             <Image Source="{Binding FlyoutIcon}" Margin="5"
-               HeightRequest="{OnPlatform 24, WinUI=20}" />
+                   HeightRequest="{OnPlatform 24, WinUI=20}" />
             <Label Grid.Column="1" FontSize="{OnPlatform 18, WinUI=12, Android=12}" Text="{Binding Title}"
-               VerticalTextAlignment="Center" />
+                   VerticalTextAlignment="Center" />
         </Grid>
     </DataTemplate>
     <!--PSPDFKit Shell End-->
 
     <!--PSPDFKit Picker-->
     <Style TargetType="Border" x:Key="PickerBorder">
-        <Setter Property="HeightRequest" Value="{OnIdiom 48, Phone=32}"/>
-        <Setter Property="Margin" Value="{OnIdiom '12,8,8,8', Phone='8'}"/>
-        <Setter Property="StrokeShape" Value="RoundRectangle 2"/>
+        <Setter Property="HeightRequest" Value="{OnIdiom 48, Phone=32}" />
+        <Setter Property="Margin" Value="{OnIdiom '12,8,8,8', Phone='8'}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 2" />
     </Style>
 
     <Style TargetType="Picker">
@@ -96,11 +97,11 @@
         <Setter Property="HorizontalOptions" Value="End" />
     </Style>
     <!--PSPDFKit Picker End-->
-    
+
     <!--PSPDFKit Entry-->
     <Style TargetType="Border" x:Key="EntryBorder">
         <Setter Property="Margin" Value="{OnIdiom '12', Phone='8,6,8,6'}" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 2"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 2" />
     </Style>
 
     <Style TargetType="Entry">
@@ -131,15 +132,15 @@
 
     <!-- PSPDFKit Switch-->
     <Style x:Key="SwitchBorder" TargetType="Border">
-        <Setter Property="Margin" 
-            Value="{OnPlatform WinUI='90,-10,0,-10', Android='90,0,0,0', iOS='100,10,0,0', MacCatalyst='100,10,0,0'}"/>
+        <Setter Property="Margin"
+                Value="{OnPlatform WinUI='90,-10,0,-10', Android='90,0,0,0', iOS='100,10,0,0', MacCatalyst='100,10,0,0'}" />
         <Setter Property="HeightRequest" Value="{OnPlatform '31', WinUI='48'}" />
         <Setter Property="WidthRequest" Value="51" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="StrokeShape" Value="{OnPlatform 'RoundRectangle 20', WinUI='Rectangle'}" />
         <Setter Property="Stroke" Value="Transparent" />
     </Style>
-    
+
     <Style TargetType="Switch">
         <Setter Property="OnColor" Value="#4537DE" />
         <Setter Property="HorizontalOptions" Value="Start" />
@@ -158,11 +159,11 @@
                             <Setter Property="ThumbColor" Value="#cccccc" />
                         </VisualState.Setters>
                     </VisualState>
-                    <VisualState x:Name="On">
-                    </VisualState>
+                    <VisualState x:Name="On" />
                     <VisualState x:Name="Off">
                         <VisualState.Setters>
-                            <Setter Property="ThumbColor" Value="{OnPlatform Android='Black', WinUI='Black', MacCatalyst='White', iOS='White'}" />
+                            <Setter Property="ThumbColor"
+                                    Value="{OnPlatform Android='Black', WinUI='Black', MacCatalyst='White', iOS='White'}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -216,8 +217,8 @@
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="BackgroundColor" Value="#F0F3F9" />
         <Setter Property="BorderWidth" Value="1" />
-        <Setter Property="BorderColor" Value="#D7DCE4"></Setter>
-        <Setter Property="Padding" Value="8, 0"></Setter>
+        <Setter Property="BorderColor" Value="#D7DCE4" />
+        <Setter Property="Padding" Value="8, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
@@ -237,7 +238,7 @@
                         <VisualState.Setters>
                             <Setter Property="TextColor" Value="#D7DCE4" />
                             <Setter Property="BackgroundColor" Value="#F0F3F9" />
-                            <Setter Property="BorderColor" Value="#D7DCE4"></Setter>
+                            <Setter Property="BorderColor" Value="#D7DCE4" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -358,7 +359,7 @@
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="Normal" />
                     <VisualState x:Name="PointerOver">
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor" Value="#1f148e" />
@@ -381,7 +382,7 @@
     </Style>
 
     <Style TargetType="Label">
-        <Setter Property="TextColor" 
+        <Setter Property="TextColor"
                 Value="Black" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="FontFamily" Value="OpenSansRegular" />

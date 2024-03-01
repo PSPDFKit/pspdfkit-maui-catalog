@@ -9,7 +9,7 @@
 
     <Color x:Key="AppBackgroundPrimaryLight">#f6f9fd</Color>
     <Color x:Key="AppBackgroundPrimaryDark">#2b2e36</Color>
-    <SolidColorBrush x:Key="AppBackgroundPrimary" 
+    <SolidColorBrush x:Key="AppBackgroundPrimary"
                      Color="{AppThemeBinding 
         Light={StaticResource AppBackgroundPrimaryLight}, 
         Dark={StaticResource AppBackgroundPrimaryDark}}" />
@@ -54,4 +54,3 @@
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
 </ResourceDictionary>
-    
