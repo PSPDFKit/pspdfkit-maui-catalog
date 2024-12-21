@@ -72,7 +72,9 @@
     <None Remove="Resources\Images\settings.svg" />
     <None Remove="Resources\Images\tools.svg" />
     <None Remove="Resources\Raw\advanceAccess.js" />
+    <None Remove="Resources\Raw\Assets\autoSave.js" />
     <None Remove="Resources\Raw\Assets\blank.pdf" />
+    <None Remove="Resources\Raw\Assets\icons\auto_save.svg" />
     <None Remove="Resources\Raw\Assets\status_completed.svg" />
     <None Remove="Resources\Raw\License.txt" />
   </ItemGroup>
@@ -84,7 +86,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PSPDFKit.MAUI.SDK" Version="1.1.0" />
+    <PackageReference Include="PSPDFKit.MAUI.SDK" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -100,6 +102,9 @@
     </Compile>
     <Compile Update="CustomControls\VerticalSeparator.xaml.cs">
       <DependentUpon>VerticalSeparator.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Examples\Views\AutoSave.xaml.cs">
+      <DependentUpon>AutoSave.xaml</DependentUpon>
     </Compile>
     <Compile Update="Examples\Views\AdvanceAPIAccess.xaml.cs">
       <DependentUpon>AdvanceAPIAccess.xaml</DependentUpon>
@@ -126,6 +131,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Examples\Views\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Examples\Views\AutoSave.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Examples\Views\ActivateTools.xaml">
@@ -164,6 +172,12 @@
   <ItemGroup>
     <MauiImage Include="Resources\Raw\Assets\icons\thrash_can.png" />
     <MauiImage Include="Resources\Raw\Assets\icons\ink.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiAsset Update="Resources\Raw\Assets\autoSave.js">
+      <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </MauiAsset>
   </ItemGroup>
 
 </Project>

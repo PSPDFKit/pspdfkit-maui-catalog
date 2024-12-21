@@ -36,6 +36,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AdvanceAPIAccessViewModel>();
         builder.Services.AddTransient<AnnotationsViewModel>();
         builder.Services.AddTransient<AnnotationToolbarCustomizationViewModel>();
+        builder.Services.AddTransient<AutoSaveViewModel>();
         builder.Services.AddTransient<ExportDocumentViewModel>();
         builder.Services.AddTransient<InstantJsonViewModel>();
         builder.Services.AddTransient<LoadDocumentViewModel>();
@@ -51,6 +52,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AdvanceAPIAccess>();
         builder.Services.AddTransient<Annotations>();
         builder.Services.AddTransient<AnnotationToolbarCustomization>();
+        builder.Services.AddTransient<AutoSave>();
         builder.Services.AddTransient<ExportDocument>();
         builder.Services.AddTransient<InstantJson>();
         builder.Services.AddTransient<LoadDocument>();
