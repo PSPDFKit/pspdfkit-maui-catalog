@@ -14,8 +14,8 @@ namespace PSPDFKit.Maui.Catalog.Examples.ViewModels;
 
 /* 
  * NOTE:
- * This example is only tested for Windows. 
- * Extra steps would be needed to implement it on other platforms. 
+ * This example is only tested for Windows and Mac (desktops). 
+ * Extra steps would be needed to implement it on mobiles. 
 */ 
 
 public enum AutoSaveStatus
@@ -34,7 +34,7 @@ public class AutoSaveViewModel : ExampleViewModelBase
     private string _filePath;
 
     public AutoSaveViewModel() :
-        base("https://pspdfkit.com//guides/maui/user-interface/main-toolbar/activate-or-deactivate-tools")
+        base("https://www.nutrient.io/guides/web/features/saving/")
     {
         OpenFileCommand = new Command(OnOpenFileRequested);
     }
@@ -57,7 +57,7 @@ public class AutoSaveViewModel : ExampleViewModelBase
             });
 
             // make the message redable
-            await Task.Delay(500);
+            // await Task.Delay(500);
 
             var documentBuffer = await PSPDFKitController.ExecuteJavaScriptFunctionAsync<byte[]>("getDocumentBuffer", new object[] { });
 
@@ -67,7 +67,7 @@ public class AutoSaveViewModel : ExampleViewModelBase
             });
 
             // simlate large file by adding delay
-            await Task.Delay(500);
+            // await Task.Delay(500);
 
             // save instantJSON to file
             File.WriteAllBytes(_filePath, documentBuffer);
