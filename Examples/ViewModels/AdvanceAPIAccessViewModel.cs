@@ -11,8 +11,6 @@ namespace PSPDFKit.Maui.Catalog.Examples.ViewModels;
 
 public class AdvanceAPIAccessViewModel : ExampleViewModelBase
 {
-    private IDocument _document;
-
     public AdvanceAPIAccessViewModel() : base("https://pspdfkit.com/guides/maui/advanced-access-apis/")
     {
     }
@@ -21,7 +19,7 @@ public class AdvanceAPIAccessViewModel : ExampleViewModelBase
     {
         try
         {
-            _document = await PSPDFKitController.LoadDocumentFromAssetsAsync(
+            await PSPDFKitController.LoadDocumentFromAssetsAsync(
                 DemoFile, PSPDFKitController.CreateViewerConfiguration());
         }
         catch (Exception ex)
@@ -34,7 +32,7 @@ public class AdvanceAPIAccessViewModel : ExampleViewModelBase
     {
         try
         {
-            await _document.ExecuteJavaScriptFunctionAsync("removeExportButton", new object[] { });
+            await PSPDFKitController.ExecuteJavaScriptFunctionAsync("removeExportButton", new object[] { });
         }
         catch (Exception ex)
         {

@@ -117,6 +117,12 @@
             Icon="export_document.png"
             ContentTemplate="{DataTemplate views:ExportDocument}"
             Route="ExportDocument" />
+        <ShellContent
+            IsVisible="{OnIdiom false, Desktop=true}"
+            Title="Auto Save Document"
+            Icon="auto_save.png"
+            ContentTemplate="{DataTemplate views:AutoSave}"
+            Route="AutoSave" />
     </FlyoutItem>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">

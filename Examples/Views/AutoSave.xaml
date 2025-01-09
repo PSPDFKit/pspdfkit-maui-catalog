@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:pspdfkit="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:viewModels="clr-namespace:PSPDFKit.Maui.Catalog.Examples.ViewModels"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       x:DataType="viewModels:AutoSaveViewModel"
+                       x:Class="PSPDFKit.Maui.Catalog.Examples.Views.AutoSave">
+    <Grid RowDefinitions="{OnIdiom '*, auto', Phone='*, auto'}">
+        <pspdfkit:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
+                      License="{OnPlatform 
+                    Android={StaticResource AndroidLicenseKey},
+                    iOS={StaticResource iOSLicenseKey},
+                    MacCatalyst={StaticResource MacCatalystLicenseKey},
+                    WinUI={StaticResource WindowsLicenseKey}}" 
+                     AdvanceAccessScriptPath="autoSave.js"/>
+
+        <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End"
+                                GuideUrl="{Binding GuideUrl}" />
+
+        <BoxView Grid.Row="1" VerticalOptions="Start"
+             HeightRequest="1" Color="#c8c8c8">
+            <BoxView.Shadow>
+                <Shadow Brush="Black" Radius="5" Opacity="0.5" />
+            </BoxView.Shadow>
+        </BoxView>
+
+        <Frame Grid.Row="1" CornerRadius="0"
+           Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+
+        <HorizontalStackLayout Grid.Row="1" Margin="{OnIdiom '12, 0', Phone='8, 8, 8, 0'}">
+            <Label Text="Save Status: " FontAttributes="Bold" FontSize="16"
+                   VerticalOptions="Center" />
+
+            <Label Text="{Binding AutoSaveStatus}"  FontSize="16" VerticalOptions="Center"
+                   Margin="{OnIdiom '12, 0, 12, 0', Phone='8, 8, 8, 0'}"/>
+
+        </HorizontalStackLayout>
+
+        <Button Text="Open File" Command="{Binding OpenFileCommand, Mode=OneWay}"
+                WidthRequest="{OnIdiom 120, Phone=80}" HeightRequest="{OnIdiom 16, Phone=28}"
+                Grid.Row="1" HorizontalOptions="End" Margin="8"/>
+    </Grid>
+</views:ExampleViewBase>
