@@ -118,6 +118,7 @@
             ContentTemplate="{DataTemplate views:ExportDocument}"
             Route="ExportDocument" />
         <ShellContent
+            IsVisible="{OnIdiom false, Desktop=true}"
             Title="Auto Save Document"
             Icon="auto_save.png"
             ContentTemplate="{DataTemplate views:AutoSave}"
