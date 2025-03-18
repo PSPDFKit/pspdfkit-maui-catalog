@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -20,8 +20,9 @@ public class ExportDocumentViewModel : ExampleViewModelBase
     private IDocument _document;
     private DocumentSourceWithExportHandler _selectedDestination;
 
-    public ExportDocumentViewModel() : base("https://pspdfkit.com/guides/maui/save-a-document/")
+    public ExportDocumentViewModel() : base("https://www.nutrient.io/guides/maui/save-a-document/")
     {
+        DemoFile = "Invoice.pdf";
         DocumentSources = new DocumentSourceWithExportHandler[]
         {
             new()
@@ -131,6 +132,7 @@ public class ExportDocumentViewModel : ExampleViewModelBase
         exportConfiguration.ExportForPrinting = OptionsPopupViewModel.ExportForPrinting;
         exportConfiguration.ExportIncrementally = OptionsPopupViewModel.ExportForPrinting;
         exportConfiguration.Flatten = OptionsPopupViewModel.Flatten;
+        exportConfiguration.PDFAConformance = OptionsPopupViewModel.SelectedPDFAConformance;
 
         return exportConfiguration;
     }

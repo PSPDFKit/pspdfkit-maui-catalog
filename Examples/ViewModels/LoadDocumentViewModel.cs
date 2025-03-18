@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -19,7 +19,7 @@ public class LoadDocumentViewModel : ExampleViewModelBase
     private IController _controller;
     private DocumentSourceWithLoadHandler _selectedDocumentSource;
 
-    public LoadDocumentViewModel() : base("https://pspdfkit.com/guides/maui/open-a-document/")
+    public LoadDocumentViewModel() : base("https://www.nutrient.io/guides/maui/open-a-document/")
     {
         DocumentSources = new DocumentSourceWithLoadHandler[]
         {
@@ -28,7 +28,7 @@ public class LoadDocumentViewModel : ExampleViewModelBase
                 DocumentSource = new DocumentSource
                 {
                     Source = "Application Assets",
-                    PlaceholderForPath = "Document asset path (demo.pdf / PSPDFKit.pdf)"
+                    PlaceholderForPath = "Document asset path (demo.pdf / menu.pdf)"
                 },
                 LoadAsync = OnLoadDocumentFromAssetsCommand
             },

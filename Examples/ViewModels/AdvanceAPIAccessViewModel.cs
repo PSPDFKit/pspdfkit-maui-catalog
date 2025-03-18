@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -11,7 +11,7 @@ namespace PSPDFKit.Maui.Catalog.Examples.ViewModels;
 
 public class AdvanceAPIAccessViewModel : ExampleViewModelBase
 {
-    public AdvanceAPIAccessViewModel() : base("https://pspdfkit.com/guides/maui/advanced-access-apis/")
+    public AdvanceAPIAccessViewModel() : base("https://www.nutrient.io/guides/maui/advanced-access-apis/")
     {
     }
 

@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -9,9 +9,8 @@ namespace PSPDFKit.Maui.Catalog.Examples.ViewModels;
 
 public class PlaygroundViewModel : ExampleViewModelBase
 {
-    public PlaygroundViewModel() : base("https://pspdfkit.com/guides/maui/intro/")
+    public PlaygroundViewModel() : base("https://www.nutrient.io/guides/maui/intro/")
     {
-        DemoFile = "playground.pdf";
     }
 
     public async void LoadDemoDocument()

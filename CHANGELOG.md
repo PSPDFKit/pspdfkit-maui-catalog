@@ -1,27 +1,41 @@
-## Newest Release
+## 1.3.0 - 13 Mar 2025
 
-### 1.1.0 - 01 Mar 2024
+### Model
 
-_See the [announcement post](https://pspdfkit.com/blog/2024/pspdfkit-maui-1-1-annotations)._
+* Updates MAUI SDK to use .NET 8 with long-term support. (J#DOTNET-331)
+* Updates Web SDK to 1.1.0. (J#DOTNET-331)
+* Fixes a bug where setting properties for ink eraser with toolbar hidden did not work. (J#DOTNET-331)
 
-#### Model
+## 1.2.0 - 15 Oct 2024
+
+### Model
+
+* Adds support for opening and converting office files. (J#DOTNET-274)
+* Adds support for programmatic export and conversion to PDF/A. (J#DOTNET-274)
+* Improves the evaluation experience. (J#CORE-667)
+* Modifies the advance access to Javascript APIs through `IController` instead of `IDocument`. (J#DOTNET-222)
+* Fixes a bug where system theme was ignored. (J#DOTNET-97)
+* Updates Web SDK to 2024.6.0.
+
+## 1.1.0 - 01 Mar 2024
+
+### Model
 
 * Adds APIs to create and edit annotations. (J#DOTNET-85)
 * Adds APIs to delete annotations. (J#DOTNET-86)
-* Adds APIs to getting annotations on a page. (J#DOTNET-86)
-* Adds support to select and deselect annotations. (J#DOTNET-3)
-* Adds support for importing and exporting instant json. (J#DOTNET-103)
+* Adds APIs to get annotations on a page. (J#DOTNET-86)
+* Adds support for selecting and deselecting annotations. (J#DOTNET-3)
+* Adds support for importing and exporting Instant JSON. (J#DOTNET-103)
 * Adds APIs for applying redaction and flattening annotations. (J#DOTNET-105)
 * Adds native APIs for adding, removing, and changing the order of toolbar buttons. (J#DOTNET-71)
 * Adds interaction mode and sidebar mode. (J#DOTNET-73)
 * Adds support for visibility and placement of the toolbar. (J#DOTNET-72)
 * Fixes clipping of toolbar after selecting certain tools. (J#DOTNET-99)
+* Updates Web SDK to 2024.1.3.
 
-## Previous Releases
+## 1.0.0 – 31 Oct 2023
 
-### 1.0.0 – 31 Oct 2023
-
-#### Model
+### Model
 
 * Adds support for accessing JavaScript APIs for advance use cases. (#42144)
 * Adds support for dark theming. (#41248)
@@ -31,3 +45,4 @@ _See the [announcement post](https://pspdfkit.com/blog/2024/pspdfkit-maui-1-1-an
 * Adds support for loading documents from a remote URL. (#41099)
 * Adds support for loading a document from a Base64 string. (#41071)
 * Adds support for loading documents from local paths. (#41054)
+* Adds Web SDK 2023.5.0.
