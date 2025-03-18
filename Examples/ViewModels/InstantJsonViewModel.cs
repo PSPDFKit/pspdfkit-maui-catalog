@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -23,8 +23,9 @@ public class InstantJsonViewModel : ExampleViewModelBase
     private bool _documentLoaded;
     private string _instantJson;
 
-    public InstantJsonViewModel() : base("https://pspdfkit.com/guides/maui/annotations/")
+    public InstantJsonViewModel() : base("https://www.nutrient.io/guides/maui/annotations/instant-json/")
     {
+        DemoFile = "default.pdf";
         _exportInstantJsonCommand = new Command(OnExportInstantJsonRequested, CanExportInstantJson);
         _importInstantJsonCommand = new Command(OnImportInstantJsonRequested, CanImportInstantJson);
     }

@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -19,7 +19,7 @@ public class AnnotationToolbarCustomizationViewModel : ExampleViewModelBase
     private readonly Command _updateIconCommand;
 
     public AnnotationToolbarCustomizationViewModel() : base(
-        "https://pspdfkit.com/guides/maui/user-interface/annotation-toolbar/customize-existing-tools/")
+        "https://www.nutrient.io/guides/maui/user-interface/annotation-toolbar/customize-existing-tools/")
     {
         _addItemsCommand = new Command(OnAddItemsRequested);
         _removeItemsCommand = new Command(OnRemoveItemsRequested, CanRemoveItems);

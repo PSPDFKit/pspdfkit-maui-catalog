@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -21,7 +21,7 @@ public class MainToolbarCustomizationViewModel : ExampleViewModelBase
     private bool _showToolbar = true;
 
     public MainToolbarCustomizationViewModel()
-        : base("https://pspdfkit.com/guides/maui/customizing-the-interface/customizing-the-toolbar/")
+        : base("https://www.nutrient.io/guides/maui/user-interface/main-toolbar/customize-existing-tools/")
     {
         _addItemsCommand = new Command(OnAddItemsRequested);
         _removeItemsCommand = new Command(OnRemoveItemsRequested, CanRemoveItems);

@@ -1,4 +1,4 @@
-﻿// Copyright © 2023-2024 PSPDFKit GmbH. All rights reserved.
+﻿// Copyright © 2023-2025 PSPDFKit GmbH d/b/a Nutrient. All rights reserved.
 // 
 // THIS SOURCE CODE AND ANY ACCOMPANYING DOCUMENTATION ARE PROTECTED BY INTERNATIONAL COPYRIGHT LAW
 // AND MAY NOT BE RESOLD OR REDISTRIBUTED. USAGE IS BOUND TO THE PSPDFKIT LICENSE AGREEMENT.
@@ -25,8 +25,9 @@ public class AnnotationsViewModel : ExampleViewModelBase
     private string _createdAnnotationId;
     private bool _isAnnotationCreated;
 
-    public AnnotationsViewModel() : base("https://pspdfkit.com/guides/maui/annotations/")
+    public AnnotationsViewModel() : base("https://www.nutrient.io/guides/maui/annotations/")
     {
+        DemoFile = "menu.pdf";
         _createAnnotationCommand = new Command(OnCreateAnnotationsRequested, CanCreateAnnotations);
         _selectAnnotationsCommand = new Command(OnSelectAnnotationsRequested, CanSelectAnnotations);
         _resetExampleCommand = new Command(OnResetExampleRequested);
