@@ -5,6 +5,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+    xmlns:nutrientViews="clr-namespace:Nutrient.Maui.Catalog.Examples.Views"
     Title="Nutrient MAUI SDK Catalog" TabBarIsVisible="False" ItemTemplate="{StaticResource PSPDFKitShellItemTemplate}"
     FlyoutBackdrop="#55111111">
     <Shell.FlyoutFooter>
@@ -58,6 +59,11 @@
             Icon="playground.png"
             ContentTemplate="{DataTemplate views:Playground}"
             Route="Playground" />
+        <ShellContent
+            Title="AI Assistant"
+            Icon="ai_assistant.png"
+            ContentTemplate="{DataTemplate nutrientViews:AIAssistant}"
+            Route="AIAssistant" />
     </FlyoutItem>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views:ExampleViewBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       x:Class="Nutrient.Maui.Catalog.Examples.Views.AIAssistant"
+                       xmlns:views="clr-namespace:PSPDFKit.Maui.Catalog.Examples.Views"
+                       xmlns:sdk="clr-namespace:PSPDFKit.Sdk;assembly=Sdk"
+                       xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+                       xmlns:viewModels="clr-namespace:Nutrient.Maui.Catalog.Examples.ViewModels"
+                       x:DataType="viewModels:AIAssistantViewModel"
+                       Title="AI Assistant">
+    <Grid>
+        <sdk:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized" Grid.ColumnSpan="4"
+                     ShowAIAssistant="true"
+                     License="{OnPlatform 
+                        Android={StaticResource AndroidLicenseKey},
+                        iOS={StaticResource iOSLicenseKey},
+                        MacCatalyst={StaticResource MacCatalystLicenseKey},
+                        WinUI={StaticResource WindowsLicenseKey}}" />
+
+        <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}" />
+    </Grid>
+</views:ExampleViewBase>

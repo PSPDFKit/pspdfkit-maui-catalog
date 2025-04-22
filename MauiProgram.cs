@@ -7,6 +7,10 @@
 
 using PSPDFKit.Maui.Catalog.Examples.ViewModels;
 using PSPDFKit.Maui.Catalog.Examples.Views;
+using Nutrient.Maui.Catalog.Examples.Views;
+using Nutrient.Maui.Catalog.Examples.ViewModels;
+
+
 #if DEBUG
 using Microsoft.Extensions.Logging;
 #endif
@@ -34,6 +38,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AboutPageViewModel>();
         builder.Services.AddTransient<ActivateToolsViewModel>();
         builder.Services.AddTransient<AdvanceAPIAccessViewModel>();
+        builder.Services.AddTransient<AIAssistantViewModel>();
         builder.Services.AddTransient<AnnotationsViewModel>();
         builder.Services.AddTransient<AnnotationToolbarCustomizationViewModel>();
         builder.Services.AddTransient<AutoSaveViewModel>();
@@ -50,6 +55,7 @@ public static class MauiProgram
         builder.Services.AddTransient<AboutPage>();
         builder.Services.AddTransient<ActivateTools>();
         builder.Services.AddTransient<AdvanceAPIAccess>();
+        builder.Services.AddTransient<AIAssistant>();
         builder.Services.AddTransient<Annotations>();
         builder.Services.AddTransient<AnnotationToolbarCustomization>();
         builder.Services.AddTransient<AutoSave>();
