@@ -1,3 +1,11 @@
+## 1.4.0 - 18 Apr 2025
+
+### Model
+
+* Adds AI Assistant support. (J#DOTNET-336)
+* Updates Web SDK to 1.2.0. (J#DOTNET-336)
+* Fixes a bug where the on click event was not raised for custom buttons. (J#WEB-2721)
+
 ## 1.3.0 - 13 Mar 2025
 
 ### Model
