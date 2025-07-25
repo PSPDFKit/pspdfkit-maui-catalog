@@ -35,6 +35,7 @@ function formElementsIterator(index, rect) {
 }
 
 async function scrollSmoothly() {
+    const currentDocument = PSPDFKit.Maui.MauiBridge.currentDocument;
     globalInstance = currentDocument;
 
     // Initialize form counter
