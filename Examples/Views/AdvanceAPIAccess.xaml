@@ -9,28 +9,44 @@
                        x:Class="PSPDFKit.Maui.Catalog.Examples.Views.AdvanceAPIAccess"
                        x:DataType="viewModels:AdvanceAPIAccessViewModel">
     <Grid RowDefinitions="*, 72">
-        <sdk:PDFView x:Name="PDFView" Initialized="OnPDFViewInitialized"
+        <sdk:PDFView x:Name="PDFView"
+                Initialized="OnPDFViewInitialized"
                      License="{OnPlatform 
                         Android={StaticResource AndroidLicenseKey},
                         iOS={StaticResource iOSLicenseKey},
                         MacCatalyst={StaticResource MacCatalystLicenseKey},
                         WinUI={StaticResource WindowsLicenseKey}}"
                      AdvanceAccessScriptPath="advanceAccess.js"
-                     CustomCSSStylesheetPath="advanceApp.css" />
+                     CustomCSSStylesheetPath="advanceApp.css"/>
 
-        <customControls:GuideLinker HorizontalOptions="End" VerticalOptions="End" GuideUrl="{Binding GuideUrl}" />
+        <customControls:GuideLinker HorizontalOptions="End"
+                VerticalOptions="End"
+                GuideUrl="{Binding GuideUrl}"/>
 
-        <BoxView Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" VerticalOptions="Start"
-                 HeightRequest="1" Color="#c8c8c8">
+        <BoxView Grid.Row="1"
+                Grid.RowSpan="{OnIdiom 1, Phone=2}"
+                Grid.ColumnSpan="4"
+                VerticalOptions="Start"
+                 HeightRequest="1"
+                Color="#c8c8c8">
             <BoxView.Shadow>
-                <Shadow Brush="Black" Radius="5" Opacity="0.5" />
+                <Shadow Brush="Black"
+                        Radius="5"
+                        Opacity="0.5"/>
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Frame Grid.Row="1"
+                Grid.RowSpan="{OnIdiom 1, Phone=2}"
+                Grid.ColumnSpan="4"
+                CornerRadius="0"
+               Background="{StaticResource FooterBackground}"
+                BorderColor="Transparent"/>
 
-        <Button Text="Remove Export Document Button" Grid.Row="1" HorizontalOptions="End"
-                Margin="8" Clicked="OnRemoveExportDocumentButtonClicked" />
+        <Button Text="Scroll Smoothly"
+                Grid.Row="1"
+                HorizontalOptions="End"
+                Margin="8"
+                Clicked="OnScrollSmoothlyClicked"/>
     </Grid>
 </views:ExampleViewBase>

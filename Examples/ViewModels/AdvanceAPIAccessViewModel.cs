@@ -13,6 +13,7 @@ public class AdvanceAPIAccessViewModel : ExampleViewModelBase
 {
     public AdvanceAPIAccessViewModel() : base("https://www.nutrient.io/guides/maui/advanced-access-apis/")
     {
+        DemoFile = "scrollDocument.pdf";
     }
 
     public async void LoadDemoDocument()
@@ -28,15 +29,15 @@ public class AdvanceAPIAccessViewModel : ExampleViewModelBase
         }
     }
 
-    public async void RemoveExportDocumentButton()
+    public async void ScrollSmoothly()
     {
         try
         {
-            await PSPDFKitController.ExecuteJavaScriptFunctionAsync("removeExportButton", new object[] { });
+            await PSPDFKitController.ExecuteJavaScriptFunctionAsync("scrollSmoothly", new object[] { });
         }
         catch (Exception ex)
         {
-            RaiseExceptionThrownEvent("Remove export document button failed", ex);
+            RaiseExceptionThrownEvent("Scroll smoothly failed", ex);
         }
     }
 }
