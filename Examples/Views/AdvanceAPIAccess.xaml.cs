@@ -24,8 +24,18 @@ public partial class AdvanceAPIAccess : ExampleViewBase
         ViewModel.LoadDemoDocument();
     }
 
-    private void OnScrollSmoothlyClicked(object sender, EventArgs e)
+    private async void OnExportInstantJsonClicked(object sender, EventArgs e)
     {
-        ViewModel.ScrollSmoothly();
+        var instantJson = await ViewModel.ExportInstantJsonAsync();
+        if (!string.IsNullOrEmpty(instantJson))
+        {
+            await Clipboard.Default.SetTextAsync(instantJson);
+            await DisplayAlert("Instant JSON Export", $"{instantJson}\n\n✓ Copied to clipboard", "OK");
+        }
+    }
+
+    private async void OnExportClicked(object sender, EventArgs e)
+    {
+        await ViewModel.ExportDocumentAsync();
     }
 }

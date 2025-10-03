@@ -1,5 +1,6 @@
 const advanceConfiguration = {
-    enableHistory: true
+    enableHistory: true,
+    headless: true,
 }
 
 let globalInstance;
