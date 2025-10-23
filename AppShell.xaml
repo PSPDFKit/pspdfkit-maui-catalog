@@ -142,6 +142,11 @@
             Icon="advance_api.png"
             ContentTemplate="{DataTemplate views:AdvanceAPIAccess}"
             Route="AdvanceAPIAccess" />
+        <ShellContent
+            Title="Document Engine"
+            Icon="load_document.png"
+            ContentTemplate="{DataTemplate nutrientViews:DocumentEngine}"
+            Route="DocumentEngine" />
     </FlyoutItem>
 
     <ShellContent

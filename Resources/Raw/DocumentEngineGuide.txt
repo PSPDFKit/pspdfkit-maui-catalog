@@ -1,0 +1,29 @@
+What is Document Engine?
+
+Nutrient Document Engine enables server-side document processing, rendering, and real-time collaboration. It offloads heavy processing from client devices and enables features like multi-user annotation synchronization.
+
+Prerequisites
+
+• Docker Desktop (or container runtime)
+
+Step 1: Create docker-compose.yml
+
+In the project root directory, create a file named docker-compose.yml with the Document Engine configuration.
+
+This file is already included in this project. You can find it at the root level with pre-configured settings for Document Engine and PostgreSQL database.
+
+Step 2: Start Document Engine
+
+From the project root directory, run:
+
+docker compose up
+
+Wait for the message: 'Access the web dashboard at http://localhost:5001/dashboard'
+
+Step 3: Upload a Document
+
+1. Visit http://localhost:5001/dashboard
+2. Login with username: dashboard and password: dashboard-password
+3. Click Add Document and upload a PDF
+4. Navigate to http://localhost:5001/dashboard/documents
+5. Copy the Document ID (e.g., 7KPS8X13JRB2G841X4V7EQ3T2J)

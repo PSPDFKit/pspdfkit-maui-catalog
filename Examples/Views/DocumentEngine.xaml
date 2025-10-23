@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nutrient.Maui.Catalog.Examples.Views.DocumentEngine"
+             xmlns:customControls="clr-namespace:PSPDFKit.Maui.Catalog.CustomControls"
+             xmlns:viewModels="clr-namespace:Nutrient.Maui.Catalog.Examples.ViewModels"
+             x:DataType="viewModels:DocumentEngineViewModel"
+             Loaded="OnDocumentEngineLoaded">
+    <Shell.TitleView>
+        <Grid>
+            <Label Text="Document Engine" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"
+                   FontSize="18" FontAttributes="Bold" />
+        </Grid>
+    </Shell.TitleView>
+    <ScrollView>
+        <Grid ColumnDefinitions="{OnIdiom '*, *', Phone='*'}" Padding="10,64,10,10" ColumnSpacing="20">
+
+            <!-- Left Side: Setup Guide -->
+            <Border Grid.Column="0" BackgroundColor="White" StrokeShape="RoundRectangle 8"
+                    Stroke="Transparent">
+                <Border.Shadow>
+                    <Shadow Brush="Black" Offset="20,20" Radius="40" Opacity="0.2" />
+                </Border.Shadow>
+                <Grid RowDefinitions="64, Auto, *" Padding="16,0">
+                    <Label Text="Setup Guide" FontSize="18" VerticalOptions="Center" FontAttributes="Bold" Padding="4" />
+
+                    <Button Style="{StaticResource SecondaryButton}" Text="Documentation" HorizontalOptions="End"
+                            VerticalOptions="Center" Command="{Binding OpenDocumentation, Mode=OneTime}"
+                            Padding="12, 0" />
+
+                    <customControls:HorizontalSeparator VerticalOptions="End" />
+
+                    <ScrollView Grid.Row="2" Margin="0,16" Padding="4,0">
+                        <Label Text="{Binding GuideText, Mode=OneWay}" FontSize="14" LineHeight="1.5" />
+                    </ScrollView>
+            </Grid>
+        </Border>
+
+        <!-- Right Side: Instant JSON Viewer -->
+        <Border Grid.Column="{OnIdiom 1, Phone=0}" Grid.Row="{OnIdiom 0, Phone=1}"
+                BackgroundColor="White" StrokeShape="RoundRectangle 8"
+                Stroke="Transparent" Margin="{OnIdiom '0', Phone='0,20,0,0'}">
+            <Border.Shadow>
+                <Shadow Brush="Black" Offset="20,20" Radius="40" Opacity="0.2" />
+            </Border.Shadow>
+            <Grid RowDefinitions="64, Auto, *" Padding="16,0">
+                <Label Text="Get Instant JSON" FontSize="18" VerticalOptions="Center" FontAttributes="Bold" Padding="4" />
+
+                <customControls:HorizontalSeparator VerticalOptions="End" />
+
+                <ScrollView Grid.Row="2" Margin="0,16" Padding="4,0">
+                    <VerticalStackLayout Spacing="16">
+                        <!-- Description -->
+                        <Label FontSize="14" LineHeight="1.5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Enter a document ID to fetch its Instant JSON annotations." />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <!-- Document ID Input -->
+                        <Label FontSize="14" FontAttributes="Bold" Text="Document ID" Margin="0,8,0,0" />
+                        <Entry
+                            Text="{Binding DocumentId, Mode=TwoWay}"
+                            Placeholder="Enter Document ID"
+                            FontSize="14"
+                            Margin="0,0,0,12" />
+
+                        <!-- Fetch Button -->
+                        <Button
+                            Text="Get Instant JSON"
+                            Command="{Binding FetchInstantJsonCommand}"
+                            Style="{StaticResource SecondaryButton}"
+                            HorizontalOptions="Start"
+                            Margin="0,0,0,12" />
+
+                        <!-- Loading Indicator -->
+                        <ActivityIndicator
+                            IsRunning="{Binding IsLoading}"
+                            IsVisible="{Binding IsLoading}"
+                            Color="{StaticResource Primary}"
+                            Margin="0,0,0,12" />
+
+                        <!-- Error Message -->
+                        <Label
+                            Text="{Binding ErrorMessage}"
+                            TextColor="Red"
+                            FontSize="13"
+                            IsVisible="{Binding HasError}"
+                            Margin="0,0,0,12"
+                            LineBreakMode="WordWrap" />
+
+                        <!-- JSON Result Label -->
+                        <Label
+                            Text="Instant JSON Response:"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            IsVisible="{Binding HasJsonResult}"
+                            Margin="0,0,0,8" />
+
+                        <!-- JSON Display -->
+                        <Border
+                            BackgroundColor="#f5f5f5"
+                            StrokeShape="RoundRectangle 4"
+                            Stroke="#ddd"
+                            Padding="12"
+                            IsVisible="{Binding HasJsonResult}"
+                            MaximumHeightRequest="400">
+                            <ScrollView>
+                                <Label
+                                    Text="{Binding JsonResult}"
+                                    FontFamily="Courier New"
+                                    FontSize="12"
+                                    LineBreakMode="CharacterWrap" />
+                            </ScrollView>
+                        </Border>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </Border>
+
+    </Grid>
+    </ScrollView>
+</ContentPage>
