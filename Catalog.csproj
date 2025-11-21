@@ -95,6 +95,11 @@
     <Using Include="CommunityToolkit.Maui" />
   </ItemGroup>
 
+  <!-- iOS Linker Configuration -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
+    <LinkDescription Include="Platforms\iOS\Linker.xml" />
+  </ItemGroup>
+
   <ItemGroup>
     <MauiXaml Update="CustomControls\GuideLinker.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<linker>
+  <!-- Preserve Nutrient SDK assemblies -->
+  <assembly fullname="Nutrient.MAUI">
+    <type fullname="*" />
+  </assembly>
+  
+  <!-- Preserve MAUI core types -->
+  <assembly fullname="Microsoft.Maui.Controls">
+    <type fullname="*" />
+  </assembly>
+  
+  <!-- Preserve catalog app types -->
+  <assembly fullname="Catalog">
+    <type fullname="*" />
+  </assembly>
+</linker>
+
