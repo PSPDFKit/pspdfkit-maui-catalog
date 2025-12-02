@@ -21,6 +21,10 @@ public class AdvanceAPIAccessViewModel : ExampleViewModelBase
         {
             await PSPDFKitController.LoadDocumentFromAssetsAsync(
                 DemoFile, PSPDFKitController.CreateViewerConfiguration());
+
+            await SetCssVariableAsync("--bui-color-border-subtle", "#000");
+            await SetCssVariableAsync("--bui-color-border-medium", "#000");
+            await SetCssVariableAsync("--bui-color-border-strong", "#000");
         }
         catch (Exception ex)
         {
@@ -37,6 +41,18 @@ public class AdvanceAPIAccessViewModel : ExampleViewModelBase
         catch (Exception ex)
         {
             RaiseExceptionThrownEvent("Remove export document button failed", ex);
+        }
+    }
+
+    public async Task SetCssVariableAsync(string variableName, string value)
+    {
+        try
+        {
+            await PSPDFKitController.ExecuteJavaScriptFunctionAsync("setCssVariable", new object[] { variableName, value });
+        }
+        catch (Exception ex)
+        {
+            RaiseExceptionThrownEvent("Set CSS variable failed", ex);
         }
     }
 }

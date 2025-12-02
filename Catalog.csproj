@@ -30,7 +30,7 @@
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     <Configurations>Debug;Release</Configurations>
     <PackageIcon>logo.png</PackageIcon>
-  	<RestoreSources>https://api.nuget.org/v3/index.json;nuget/</RestoreSources>
+  	<RestoreSources>https://api.nuget.org/v3/index.json;</RestoreSources>
 	</PropertyGroup>
 
   <ItemGroup>
