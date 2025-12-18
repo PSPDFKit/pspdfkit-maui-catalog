@@ -1,3 +1,13 @@
+## 1.5.0 - 16 Dec 2025
+
+### Model
+
+* Adds support for custom theming using `advanceConfiguration.theme`. (J#DOTNET-388)
+* Improves the loading performance of the `LoadDocumentAsync` method significantly. (J#DOTNET-389)
+* Updates MAUI SDK to .NET 10 for improved performance and compatibility. (J#DOTNET-387)
+* Updates Web SDK to 1.10.0. (J#DOTNET-390)
+* Fixes a crash that occurred when loading large files. (J#DOTNET-389)
+
 ## 1.4.0 - 18 Apr 2025
 
 ### Model

@@ -27,8 +27,8 @@
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Border Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4"
+               Background="{StaticResource FooterBackground}" Stroke="Transparent" />
 
         <Button Text="Remove Export Document Button" Grid.Row="1" HorizontalOptions="End"
                 Margin="8" Clicked="OnRemoveExportDocumentButtonClicked" />

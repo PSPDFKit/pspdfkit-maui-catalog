@@ -28,8 +28,8 @@
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Border Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4"
+               Background="{StaticResource FooterBackground}" Stroke="Transparent" />
 
         <Border Grid.Row="1" Grid.ColumnSpan="1" Style="{StaticResource PickerBorder}">
             <Grid>

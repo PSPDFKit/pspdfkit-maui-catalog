@@ -12,8 +12,6 @@ namespace Nutrient.Maui.Catalog.Examples.ViewModels
 {
     public class AIAssistantViewModel : ExampleViewModelBase
     {
-        private bool _showAIAssistant = true;
-
         public AIAssistantViewModel() : base("https://www.nutrient.io/guides/maui/ai-assistant/")
         {
             DemoFile = "invoice.pdf";

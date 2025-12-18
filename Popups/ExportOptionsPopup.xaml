@@ -6,7 +6,7 @@
              x:Class="PSPDFKit.Maui.Catalog.Popups.ExportOptionsPopup"
              x:DataType="viewModels:ExportOptionsPopupViewModel" Color="Transparent"
              Size="{OnPlatform WinUI='320,228', Android='320,248', iOS='360, 288', MacCatalyst='360,288'}">
-    <Frame CornerRadius="4" Background="{OnPlatform White, MacCatalyst='#fafafa', iOS='#ffffff'}">
+    <Border StrokeShape="RoundRectangle 4" Background="{OnPlatform White, MacCatalyst='#fafafa', iOS='#ffffff'}" Stroke="Transparent">
         <VerticalStackLayout>
             <Label Text="Export Options" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" />
 
@@ -49,5 +49,5 @@
                 </Border>
             </Grid>
         </VerticalStackLayout>
-    </Frame>
+    </Border>
 </views:Popup>

@@ -25,8 +25,8 @@
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="{OnIdiom '2', Phone='1'}"
-               CornerRadius="0" Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Border Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="{OnIdiom '2', Phone='1'}"
+               Background="{StaticResource FooterBackground}" Stroke="Transparent" />
 
         <Button Text="Export and Reset" Grid.Row="1" Margin="8"
                 HeightRequest="48"

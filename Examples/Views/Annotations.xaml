@@ -24,8 +24,8 @@
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Border Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4"
+               Background="{StaticResource FooterBackground}" Stroke="Transparent" />
 
         <Button HeightRequest="{OnIdiom 16, Phone=28}" Grid.Row="1" Margin="{OnIdiom 8, Phone='8,8,8,0'}" Padding="0"
                 Command="{Binding SelectAnnotationsCommand, Mode=OneTime}">

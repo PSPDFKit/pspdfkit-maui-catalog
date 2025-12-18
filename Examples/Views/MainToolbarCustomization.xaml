@@ -29,8 +29,8 @@
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="{OnIdiom 4, Phone=2}"
-               CornerRadius="0" Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Border Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="{OnIdiom 4, Phone=2}"
+               Background="{StaticResource FooterBackground}" Stroke="Transparent" />
 
         <Label Text="Main Toolbar Items Operation" Grid.Row="1" Grid.ColumnSpan="3"
                Margin="{OnIdiom '12, 12, 12, 0', Phone='8, 8, 8, 0'}" FontAttributes="Bold" />
