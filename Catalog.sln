@@ -12,7 +12,6 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1B083030-5D86-8A07-6DCC-71145CA37F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B083030-5D86-8A07-6DCC-71145CA37F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B083030-5D86-8A07-6DCC-71145CA37F55}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{1B083030-5D86-8A07-6DCC-71145CA37F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B083030-5D86-8A07-6DCC-71145CA37F55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
@@ -20,6 +19,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A72E76E2-B4C3-4264-B707-8763611A207E}
+		SolutionGuid = {9F91248D-1AE9-4F45-ABAC-1A85D343B809}
 	EndGlobalSection
 EndGlobal

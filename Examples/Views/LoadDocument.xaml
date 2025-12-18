@@ -28,13 +28,13 @@
             </BoxView.Shadow>
         </BoxView>
 
-        <Frame Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4" CornerRadius="0"
-               Background="{StaticResource FooterBackground}" BorderColor="Transparent" />
+        <Border Grid.Row="1" Grid.RowSpan="{OnIdiom 1, Phone=2}" Grid.ColumnSpan="4"
+               Background="{StaticResource FooterBackground}" Stroke="Transparent" />
 
         <Border Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource PickerBorder}">
             <Grid>
                 <Picker x:Name="DocumentSourcePicker"
-                        WidthRequest="{OnIdiom 180, Phone=''}"
+                        WidthRequest="{OnIdiom 180, Phone=-1}"
                         ItemsSource="{Binding DocumentSources, Mode=OneWay}"
                         ItemDisplayBinding="{Binding DocumentSource.Source}"
                         SelectedItem="{Binding SelectedDocumentSource, Mode=TwoWay}" />
@@ -55,7 +55,7 @@
 
                 <Button Text="Load" Command="{Binding LoadCommand, Mode=OneTime}" CornerRadius="0"
                         Padding="{OnIdiom 0, Phone='14, 0'}" Margin="{OnIdiom '-2', Phone='-2'}"
-                        WidthRequest="{OnIdiom 120, Phone=''}" HorizontalOptions="End" />
+                        WidthRequest="{OnIdiom 120, Phone='-1'}" HorizontalOptions="End" />
             </Grid>
         </Border>
     </Grid>

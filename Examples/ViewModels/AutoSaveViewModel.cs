@@ -28,7 +28,6 @@ public enum AutoSaveStatus
 
 public class AutoSaveViewModel : ExampleViewModelBase
 {
-    private IViewerConfiguration _viewerConfiguration;
     private IDocument _document;
     private AutoSaveStatus _autoSaveStatus = AutoSaveStatus.Succeeded;
     private string _filePath;
