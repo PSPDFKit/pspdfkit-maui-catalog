@@ -11,8 +11,7 @@
     <SingleProject>true</SingleProject>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>12.0</LangVersion>
-    <Version>1.5.0</Version>
-    <MauiVersion>9.0.120</MauiVersion>
+    <Version>1.6.0</Version>
 
     <!-- Display name -->
     <ApplicationTitle>Nutrient MAUI SDK Catalog</ApplicationTitle>
@@ -22,7 +21,7 @@
     <ApplicationIdGuid>2b60b8d4-07fa-4cae-a32f-d93a47958a32</ApplicationIdGuid>
 
     <!-- Versions -->
-    <ApplicationDisplayVersion>1.5.0</ApplicationDisplayVersion>
+    <ApplicationDisplayVersion>1.6.0</ApplicationDisplayVersion>
 
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
@@ -86,11 +85,11 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.120" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Nutrient.MAUI.SDK" Version="1.5.0" />
+    <PackageReference Include="Nutrient.MAUI.SDK" Version="1.6.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,3 +1,11 @@
+## 1.6.0 - 27 Apr 2026
+
+### Model
+
+* Updates MAUI SDK to MAUI 10.0.
+* Updates Web SDK to [1.14.0](https://www.nutrient.io/guides/web/changelog/#1.14.0).
+* Fixes an `INVALID_PASSWORD` error while trying to open a password-protected file in a licensed viewer. (J#DOTNET-394) 
+
 ## 1.5.0 - 16 Dec 2025
 
 ### Model
